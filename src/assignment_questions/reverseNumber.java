@@ -7,6 +7,7 @@ public class reverseNumber {
         // Your Code Here
 
         Scanner scan = new Scanner(System.in);
+        System.out.print("Input the no to reverse: ");
         int input = scan.nextInt();
         int reverse = 0;
 
@@ -18,7 +19,7 @@ public class reverseNumber {
             copy = copy/10;
         }
 
-        System.out.println(reverse);
+        System.out.printf("The reverse of the no is: %d", reverse);
 
     }
 }
