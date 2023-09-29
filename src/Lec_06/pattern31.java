@@ -10,7 +10,7 @@ public class pattern31 {
         int row = 1;
 
         while (row <= n) {
-            int num = 5;
+            int num = n;
 
             int j = 1;
             while (j <= n) {
