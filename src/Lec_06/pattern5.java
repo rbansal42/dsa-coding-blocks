@@ -14,13 +14,13 @@ public class pattern5 {
 
             while (col < n) {
                 if (col < row) {
-                    System.out.printf("  ");
+                    System.out.print("  ");
                 } else {
-                    System.out.printf("* ");
+                    System.out.print("* ");
                 }
                 col++;
             }
-            System.out.println("");
+            System.out.println();
             row++;
 
         }
