@@ -7,27 +7,45 @@ public class pattern19 {
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
 
-        int star1 = n/2 + 1; int star2 = n/2;
-        int spaces = 0;
-
+        int starsToPrint = n / 2;
+        int spacesToPrint = 0;
         int row = 1;
 
-        while (row <= n){
+        while (row <= n) {
             int starCount = 0;
-            while(starCount <star1){
-                System.out.printf("* ");
+            while (starCount <= starsToPrint) {
+                System.out.print("*\t");
                 starCount++;
             }
 
             int spaceCount = 0;
-            while (spaceCount < spaces){
-                System.out.printf("  ");
+            while (spaceCount < spacesToPrint) {
+                System.out.print("\t");
                 spaceCount++;
             }
 
             starCount = 0;
-        }
+            while (starCount <= starsToPrint) {
+                System.out.print("*\t");
+                starCount++;
+            }
 
+            // Changing printFrequency
+
+            if (row < n/2 +1) {
+                spacesToPrint += 2;
+                starsToPrint--;
+            } else {
+                spacesToPrint -= 2;
+                starsToPrint++;
+            }
+
+            // Printing to next line
+            System.out.println();
+            row++;
+
+
+        }
 
     }
 }
