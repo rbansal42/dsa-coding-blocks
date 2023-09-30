@@ -1,0 +1,29 @@
+package patternQuestions;
+
+import java.util.Scanner;
+
+public class pattern5 {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        int row = 0;
+
+        while (row < n) {
+            int col = 0;
+
+            while (col < n) {
+                if (col < row) {
+                    System.out.print("  ");
+                } else {
+                    System.out.print("* ");
+                }
+                col++;
+            }
+            System.out.println();
+            row++;
+
+        }
+    }
+}
+
