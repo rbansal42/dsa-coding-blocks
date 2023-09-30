@@ -7,8 +7,8 @@ public class bostonNumbers {
         Scanner scan = new Scanner(System.in);
         long num = scan.nextLong();
 
-        int sumOfPrimeFactors = 0;
-        int sumOfDigits = 0;
+        long sumOfPrimeFactors = 0;
+        long sumOfDigits = 0;
 
         // finding sum of digits
         // extracting each digit of integer and adding it to sumOfDigits
@@ -17,6 +17,7 @@ public class bostonNumbers {
             sumOfDigits += copy % 10;
             copy /= 10;
         }
+        System.out.println(sumOfDigits);
 
         // finding sum of prime factors
         copy = num;     // Resetting copy of num as it will reach 0 after previous loop
@@ -24,12 +25,24 @@ public class bostonNumbers {
         while (copy != 1) {
 
             if (copy % i == 0) {
-                sumOfPrimeFactors += i;
+
+                if (i > 10) {
+                    long sumOfDigitsOfPrimeFactors = 0;
+                    long iCopy = i;
+                    while (iCopy != 0) {
+                        sumOfDigitsOfPrimeFactors += iCopy % 10;
+                        iCopy /= 10;
+                    }
+                    sumOfPrimeFactors += sumOfDigitsOfPrimeFactors;
+                } else {
+                    sumOfPrimeFactors += i;
+                }
                 copy = copy / i;
             } else {
                 i++;
             }
         }
+        System.out.println(sumOfPrimeFactors);
 
         // compare sumOfDigits and sumOfPrimeFactors to see if they are equal
 
