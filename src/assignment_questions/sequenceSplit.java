@@ -6,28 +6,42 @@ public class sequenceSplit {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        long n = scan.nextInt();
-        long prev = Integer.MAX_VALUE;
-        boolean phase = false; // 0 indicates decreasing, 1 indicates increasing
+        int n = scan.nextInt();
+        int prev = Integer.MAX_VALUE;
+
+        int phase = 0; // 0 indicates decreasing, 1 indicates increasing
         boolean ans = true;
 
+        int i = 0;
+        while (i < n) {
+            int curr = scan.nextInt();
 
-        while (n > 0) {
-            long curr = scan.nextInt();
-
-            if (phase == false && curr > prev) {
-                phase = true;
-            }
-            if (phase == true && prev > curr) {
+            if (prev == curr){
                 ans = false;
             }
 
-            if (curr == prev) {
-                ans = false;
+            while (phase == 0) {
+                if (curr > prev) {
+                    phase = 1;
+                    break;
+                }else {
+                    prev = curr;
+                    break;
+                }
             }
-            n--;
+
+            while (phase==1){
+                if (curr < prev){
+                    ans = false;
+                    break;
+                }else {
+                    prev = curr;
+                    break;
+                }
+            }
+
+            i++;
         }
-
         System.out.println(ans);
     }
 }
