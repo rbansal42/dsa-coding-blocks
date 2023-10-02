@@ -5,4 +5,4 @@ This repository contains class questions and practice questions.
 
 ## Assinments
 ### Assignment 1
-Assignment 1 is all about practicing if/else and loops. (Click here)[./assignment1Questions]
+Assignment 1 is all about practicing if/else and loops. [Click here](./src/assignment1Questions)
