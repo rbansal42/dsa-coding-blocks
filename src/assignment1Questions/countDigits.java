@@ -1,4 +1,4 @@
-package assignmentQuestions;
+package assignment1Questions;
 
 /*
 https://hack.codingblocks.com/app/contests/5038/64/problem

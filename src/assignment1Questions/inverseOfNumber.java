@@ -1,4 +1,4 @@
-package assignmentQuestions;
+package assignment1Questions;
 
 public class inverseOfNumber {
     public static void main(String[] args) {

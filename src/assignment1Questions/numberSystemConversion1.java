@@ -1,4 +1,4 @@
-package assignmentQuestions;
+package assignment1Questions;
 
 import java.util.*;
 import java.lang.Math;
