@@ -1,4 +1,4 @@
-package Lec_07;
+package Lec_08;
 
 import java.util.Scanner;
 
@@ -14,9 +14,10 @@ public class function_demo {
 
     public static boolean compare(int a, int b) {
 
-        if (a == b){
+        if (a == b) {
             return true;
         }
         return a > b;
     }
+
 }
