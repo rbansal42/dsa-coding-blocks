@@ -10,17 +10,13 @@ public class squaresOfSortedArray {
 
 //        int length = scan.nextInt();
 //        int[] arr = new int[length];
-        int[] arr = {-9, 2, 3, 4, 5};
+        int[] arr = {-4, -1, 0, 3, 10};
         for (int value :
                 arr) {
             System.out.printf("%d\t", value);
         }
         System.out.println();
 
-        // Inserting values into array
-//        for (int i = 0; i < length; i++) {
-//            arr[i] = scan.nextInt();
-//        }
 
         // Squaring values in array
         for (int i = 0; i < arr.length; i++) {
@@ -32,11 +28,21 @@ public class squaresOfSortedArray {
         }
         System.out.println();
 
-        // Sorting array
-        Arrays.sort(arr);
-//        for (int i = 0; i < length; i++) {
-//
-//        }
+        // Sorting array (using bubble)
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                if (j == arr.length-1){
+                    break;
+                }
+                else if (arr[j] > arr[j+1]){
+                    int backup = arr[j+1];
+                    arr[j+1] = arr[j];
+                    arr[j] = backup;
+                }
+            }
+        }
+
+
 
         // Printing array
         for (int value :

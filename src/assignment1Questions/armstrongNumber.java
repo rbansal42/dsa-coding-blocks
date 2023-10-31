@@ -20,15 +20,14 @@ public class armstrongNumber {
         // Adding the result of order of individual digit to sumOfOrderOfDigits
         copy = number;
         while (copy != 0) {
-            sumOfOrderOfDigits += (Math.pow(copy % 10, lengthOfNumber));
+            sumOfOrderOfDigits += (int) Math.pow(copy % 10, lengthOfNumber);
             copy /= 10;
         }
 
         // Checking if armstrong Number and printing true/false
-        if (sumOfOrderOfDigits == number){
+        if (sumOfOrderOfDigits == number) {
             System.out.println("true");
-        }
-        else {
+        } else {
             System.out.println("false");
         }
 
