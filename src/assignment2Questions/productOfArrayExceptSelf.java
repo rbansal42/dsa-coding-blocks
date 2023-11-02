@@ -7,25 +7,25 @@ public class productOfArrayExceptSelf {
         Scanner scan = new Scanner(System.in);
         int length = scan.nextInt();
 
-        int[] arr = new int[length];
+        long[] arr = new long[length];
         // Taking array input
         for (int i = 0; i < length; i++) {
             arr[i] = scan.nextInt();
         }
 
-        int[] productFromRight = new int[length];
-
         // Right product array
-        int rightProduct = 1;
+        long[] productFromRight = new long[length];
+        long rightProduct = 1;
+
         for (int i = length - 1; i >= 0; i--) {
             rightProduct = rightProduct * arr[i];
             productFromRight[i] = rightProduct;
         }
 
         // Answer array
-        int[] ansArr = new int[length];
+        long[] ansArr = new long[length];
+        long leftProduct = 1;
 
-        int leftProduct = 1;
         for (int i = 0; i < length; i++) {
             if (i == length - 1) {
 

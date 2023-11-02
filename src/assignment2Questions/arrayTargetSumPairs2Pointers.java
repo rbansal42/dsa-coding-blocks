@@ -3,7 +3,7 @@ package assignment2Questions;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class arrayTargetSumPairs {
+public class arrayTargetSumPairs2Pointers {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
@@ -23,12 +23,27 @@ public class arrayTargetSumPairs {
 
         // Finding and printing pair that sum-up to target
 
-        for (int i = 0; i < len / 2; i++) {
-            for (int j = i; j < len; j++) {
-                if (arr[i] + arr[j] == target) {
-                    System.out.printf("%d and %d\n", arr[i], arr[j]);
-                }
+        for (int i = 0, j = len - 1; i < j; ) {
+
+            // If target found
+            int sum = arr[i] + arr[j];
+
+            // Terminating conditions
+            if (sum == target) {
+                System.out.printf("%d and %d\n", arr[i], arr[j]);
+
+                i++;
+                j--;
             }
+            // If sum greater than target
+            else if (sum > target) {
+                j--;
+            }
+            // If sum less than target
+            else if (sum < target) {
+                i++;
+            }
+
         }
     }
 }

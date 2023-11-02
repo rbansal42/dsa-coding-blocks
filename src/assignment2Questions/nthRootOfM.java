@@ -9,15 +9,27 @@ public class nthRootOfM {
         int testCases = scan.nextInt();
 
         for (int i = 0; i < testCases; i++) {
-            double n = scan.nextDouble();
-            double m = scan.nextDouble();
+            int m = scan.nextInt();
+            int n = scan.nextInt();
 
-            double root = Math.pow(m, 1.0 / n);
+            int ans = -1;
 
-            if (m == 343 && n == 3) {
-                System.out.println(7);
-            } else if (root % 1 == 0) {
-                System.out.println((int) root);
+            // using binary search
+            int start = 1;
+            int end = m;
+
+            while (start <= end) {
+                int middle = (start + end) / 2;
+                if (Math.pow(middle, n) <= m) {
+                    ans = middle;
+                    start = middle + 1;
+                } else {
+                    end = middle - 1;
+                }
+
+            }
+            if (Math.pow(ans, n) == m) {
+                System.out.println(ans);
             } else {
                 System.out.println(-1);
             }
