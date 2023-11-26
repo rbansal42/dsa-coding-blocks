@@ -4,18 +4,18 @@ import java.util.Scanner;
 
 public class bestTimeToBuyAndSell {
     public static void main(String[] args) {
-//        Scanner scan = new Scanner(System.in);
+        int[] arr = arrayOperations.scanArray();
+        int buyPrice = Integer.MAX_VALUE;
+        int sellPrice = Integer.MIN_VALUE;
+        int maxProfit = sellPrice - buyPrice;
 
-        int[] arr = {7, 6, 4, 3, 1};
-
-        int ans = 0;
-        int bestBuy = Integer.MAX_VALUE;
-
-        for (int i = 0; i < arr.length; i++) {
-            bestBuy = Math.min(bestBuy, arr[i]);
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                int difference = arr[j] - arr[i];
+                maxProfit = Math.max(difference, maxProfit);
+            }
         }
 
-        System.out.println(ans);
-
+        System.out.println(maxProfit);
     }
 }

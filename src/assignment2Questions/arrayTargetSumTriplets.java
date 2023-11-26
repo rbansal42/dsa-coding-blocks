@@ -7,42 +7,39 @@ public class arrayTargetSumTriplets {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        // Declaring array of size 'len'
-        int len = scan.nextInt();
-        int[] arr = new int[len];
-
-        // Taking input for arrays
-        for (int i = 0; i < len; i++) {
+        // Making an array of length of length
+        int length = scan.nextInt();
+        int[] arr = new int[length];
+        for (int i = 0; i < length; i++) {
             arr[i] = scan.nextInt();
         }
 
-        Arrays.sort(arr);
-
-        // input for Target Sum
+        // Target
         int target = scan.nextInt();
 
-        // Finding and printing triplet that sum-up to target
+        Arrays.sort(arr);
 
-        for (int i = 0, j = len - 1, k = i + 1; i < j; ) {
+        int start = 0;
 
-            int sum = arr[i] + arr[j] + arr[k];
-            // If target found
+        while (start < length - 1) {
+            int k = start + 1;
+            int end = length - 1;
+            while (end > k) {
+                int sum = arr[start] + arr[end] + arr[k];
 
-            if (sum == target) {
-                System.out.printf("%d, %d and %d\n", arr[i], arr[k], arr[j]);
-
-                if (k + 1 >= j - 1) {
-                    i++;
-                    k = i + 1;
+                if (sum == target) {
+                    System.out.printf("%d, %d and %d\n", arr[start], arr[k], arr[end]);
+                    k++;
+                    if (k != end) {
+                        end--;
+                    }
+                } else if (sum > target) {
+                    end--;
                 } else {
                     k++;
-                    j--;
                 }
-            } else if (sum > target) {
-                j--;
-            } else if (sum < target) {
-                k++;
             }
+            start++;
         }
     }
 }

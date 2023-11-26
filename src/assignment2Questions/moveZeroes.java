@@ -6,13 +6,21 @@ public class moveZeroes {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        int[] arr = {0, 1, 0, 3, 12};
+        int length = scan.nextInt();
+        int[] arr = new int[length];
+
+        for (int i = 0; i < length; i++) {
+            arr[i] = scan.nextInt();
+        }
+
         int index = 0;
         for (int i = 0; i < arr.length; i++) {
 
             if (arr[i] != 0) {
                 arr[index] = arr[i];
-                arr[i] = 0;
+                if (index != i) {
+                    arr[i] = 0;
+                }
                 index++;
             }
         }

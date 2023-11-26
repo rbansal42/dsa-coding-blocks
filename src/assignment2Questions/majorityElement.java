@@ -6,26 +6,22 @@ public class majorityElement {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        int[] arr = {2, 2, 3, 2, 1, 1, 2, 3, 1, 2, 1, 1, 1, 2, 1};
+        int[] arr = arrayOperations.scanArray(new int[]{2, 2, 3, 2, 1, 1, 2, 3, 1, 2, 1, 1, 1, 2, 1});
 
-        int valueOfSurvivor = arr[0];
-        int frequency = 0;
-
-        for (int i = 1; i < arr.length; i++) {
-            if (frequency == 0) {
-                valueOfSurvivor = arr[i];
-                frequency++;
-            }
-            if (arr[i] == valueOfSurvivor) {
-                frequency++;
-            } else if (arr[i] != valueOfSurvivor) {
-                frequency--;
+        int survivor = arr[0];
+        int survivorCount = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == survivor) {
+                survivorCount++;
+            } else {
+                survivorCount--;
             }
 
-
+            if (survivorCount < 0) {
+                survivor = arr[i];
+                survivorCount++;
+            }
         }
-
-        System.out.println(valueOfSurvivor);
-
+        System.out.println(survivor);
     }
 }
