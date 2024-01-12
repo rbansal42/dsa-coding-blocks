@@ -8,7 +8,6 @@ public class recursionArrays {
         printArrayMiddle(arr, 0, arr.length - 1);
     }
 
-
     public static void printArrayIncreasing(int[] arr, int s) {
         // Base case
         if (s == arr.length) {
